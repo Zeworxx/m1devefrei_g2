@@ -38,8 +38,9 @@ export const resolvers: Resolvers = {
     }
   },
   People: {
+    eyeColor: (parent) => parent.eye_color,
     films: (parent, _, { dataSources }) => {
       return dataSources.ghibliAPI.getFilms()
     }
-  }
+  },
 }
