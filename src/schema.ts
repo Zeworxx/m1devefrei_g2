@@ -15,13 +15,13 @@ type Author {
 }
 
 type Film {
-  id: ID
+  id: ID!
   title: String
   people: [People!]
 }
 
 type People {
-  id: ID
+  id: ID!
   name: String
   eyeColor: String
   films: [Film!]

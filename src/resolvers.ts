@@ -22,7 +22,7 @@ export const resolvers: Resolvers = {
     },
     getFilms: (_, __, { dataSources }) => {
       return dataSources.ghibliAPI.getFilms()
-    }, 
+    },
     getPeople: (_, __, { dataSources }) => {
       return dataSources.ghibliAPI.getPeople()
     },
@@ -40,7 +40,11 @@ export const resolvers: Resolvers = {
   People: {
     eyeColor: (parent) => parent.eye_color,
     films: (parent, _, { dataSources }) => {
+      if (!parent.id) {
+        throw new GraphQLError('Missing ID')
+      }
       return dataSources.ghibliAPI.getFilms()
+
     }
   },
 }
