@@ -32,4 +32,14 @@ export const resolvers: Resolvers = {
       return dataSources.trackAPI.getAuthorBy(parent.authorId)
     }
   },
+  Film: {
+    people: (parent, _, { dataSources }) => {
+      return dataSources.ghibliAPI.getPeople()
+    }
+  },
+  People: {
+    films: (parent, _, { dataSources }) => {
+      return dataSources.ghibliAPI.getFilms()
+    }
+  }
 }

@@ -15,16 +15,16 @@ type Author {
 }
 
 type Film {
-  id: ID!
+  id: ID
   title: String
-  people: [People]
+  people: [People!]
 }
 
 type People {
-  id: ID!
+  id: ID
   name: String
-  eyeColor: String
-  films: [Film]
+  eye_color: String
+  films: [Film!]
 }
 
 type Query {

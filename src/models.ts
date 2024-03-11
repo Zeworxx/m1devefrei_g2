@@ -24,7 +24,7 @@ export type GhibliFilmModel = {
   release_date: string;
   running_time: string;
   rt_score: string;
-  people: string[];
+  people: GhibliPeopleModel[];
   species: string[];
   locations: string[];
   vehicles: string[];
@@ -38,7 +38,7 @@ export type GhibliPeopleModel = {
   age: string;
   eye_color: string;
   hair_color: string;
-  films: string;
+  films: GhibliFilmModel[];
   species: string;
   url: string;
 };

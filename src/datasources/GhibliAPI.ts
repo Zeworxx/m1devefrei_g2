@@ -4,8 +4,8 @@ import { AuthorModel, GhibliFilmModel, GhibliPeopleModel, TrackModel } from "../
 export class GhibliAPI extends RESTDataSource {
   baseURL = "https://ghibliapi.dev/";
 
-  getFilms() {
-    return this.get<GhibliFilmModel[]>('films')
+  async getFilms() {
+    return await this.get<GhibliFilmModel[]>('films')
   }
 
   getPeople() {

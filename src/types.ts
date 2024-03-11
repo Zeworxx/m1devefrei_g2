@@ -27,16 +27,16 @@ export type Author = {
 
 export type Film = {
   __typename?: 'Film';
-  id: Scalars['ID']['output'];
-  people?: Maybe<Array<Maybe<People>>>;
+  id?: Maybe<Scalars['ID']['output']>;
+  people?: Maybe<Array<People>>;
   title?: Maybe<Scalars['String']['output']>;
 };
 
 export type People = {
   __typename?: 'People';
-  eyeColor?: Maybe<Scalars['String']['output']>;
-  films?: Maybe<Array<Maybe<Film>>>;
-  id: Scalars['ID']['output'];
+  eye_color?: Maybe<Scalars['String']['output']>;
+  films?: Maybe<Array<Film>>;
+  id?: Maybe<Scalars['ID']['output']>;
   name?: Maybe<Scalars['String']['output']>;
 };
 
@@ -180,16 +180,16 @@ export type AuthorResolvers<ContextType = DataSourceContext, ParentType extends 
 };
 
 export type FilmResolvers<ContextType = DataSourceContext, ParentType extends ResolversParentTypes['Film'] = ResolversParentTypes['Film']> = {
-  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
-  people?: Resolver<Maybe<Array<Maybe<ResolversTypes['People']>>>, ParentType, ContextType>;
+  id?: Resolver<Maybe<ResolversTypes['ID']>, ParentType, ContextType>;
+  people?: Resolver<Maybe<Array<ResolversTypes['People']>>, ParentType, ContextType>;
   title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type PeopleResolvers<ContextType = DataSourceContext, ParentType extends ResolversParentTypes['People'] = ResolversParentTypes['People']> = {
-  eyeColor?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  films?: Resolver<Maybe<Array<Maybe<ResolversTypes['Film']>>>, ParentType, ContextType>;
-  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  eye_color?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  films?: Resolver<Maybe<Array<ResolversTypes['Film']>>, ParentType, ContextType>;
+  id?: Resolver<Maybe<ResolversTypes['ID']>, ParentType, ContextType>;
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
